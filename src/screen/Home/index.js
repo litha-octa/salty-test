@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
-import { Logo, MainBanner, IconBurger, MainBannerDesk } from "../../assets/img";
+import { Logo, MainBanner, IconBurger } from "../../assets/img";
 import "./index.css";
 import {
   IntroCard,
