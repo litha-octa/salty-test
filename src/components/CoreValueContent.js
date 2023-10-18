@@ -2,6 +2,7 @@ import { CoreValue } from "../assets/constant/coreValue";
 import { Box, Text, Image } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
 import { Illustration } from "../assets/img";
+import "./index.css";
 
 const CoreValueContent = () => {
   return (
@@ -25,7 +26,12 @@ const CoreValueContent = () => {
           </Box>
         );
       })}
-      <Image src={Illustration} alt="illustration" style={styles.ilustration} />
+      <Image
+        src={Illustration}
+        alt="illustration"
+        className="illustration"
+        // style={styles.ilustration}
+      />
     </Box>
   );
 };
@@ -46,6 +52,7 @@ const styles = {
   desc: {
     color: Colors.GREY,
     fontFamily: "rubik",
+    marginBottom: 16,
   },
   list: {
     padding: 10,
@@ -55,8 +62,8 @@ const styles = {
     fontFamily: "rubik",
     marginBottom: 10,
   },
-  ilustration: {
-    width: "30%",
-    height: "auto",
-  },
+  // ilustration: {
+  //   width: "30%",
+  //   height: "auto",
+  // },
 };

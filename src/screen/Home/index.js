@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Image } from "@chakra-ui/react";
-import { Logo, MainBanner } from "../../assets/img";
-// import { HamburgerIcon } from "@chakra-ui/icons";
+import { Logo, MainBanner, IconBurger, MainBannerDesk } from "../../assets/img";
 import "./index.css";
 import {
   IntroCard,
@@ -16,14 +15,21 @@ const Home = () => {
     <div className="main">
       <Box className="nav">
         <Image src={Logo} />
-        {/* <HamburgerIcon /> */}
+        <Image src={IconBurger} boxSize={"30px"} />
       </Box>
       <Box className="main-banner">
         <Image src={MainBanner} />
       </Box>
       <Box className="intro-container">
         {Introductions?.map((item, index) => {
-          return <IntroCard item={item} key={index} />;
+          return (
+            <IntroCard
+              item={item}
+              index={index}
+              length={Introductions?.length}
+              key={index}
+            />
+          );
         })}
       </Box>
       <CoreValueContent />

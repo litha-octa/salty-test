@@ -1,0 +1,30 @@
+.introCard{
+    min-width: 425px;
+    padding: 16px;
+}
+.illustration{
+    width:25%;
+    display: flex;
+    justify-content: end;
+}
+.indicatorIntro{
+    /* display: none; */
+    visibility: hidden;
+}
+@media screen and (
+    max-width: 425px
+){
+.illustration{
+width: 100%
+}
+.indicatorIntro {
+    /* display: contents; */
+    visibility: visible;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+}

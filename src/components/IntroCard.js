@@ -1,11 +1,25 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Image } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
-const IntroCard = ({ item }) => {
+import { NextBtn, PrevBtn } from "../assets/img";
+import "./index.css";
+const IntroCard = ({ item, index, length }) => {
+  let current = index + 1;
   return (
-    <Box style={styles.body}>
-      <Text style={styles.title}>{item?.title || "Title"}</Text>
-      <Text style={styles.subtitle}>{item?.subtitle || "Text subtitle"}</Text>
-      <Text style={styles.content}>{item?.content || "Text content"}</Text>
+    <Box className={"introCard"}>
+      <Box>
+        <Text style={styles.title}>{item?.title || "Title"}</Text>
+        <Text style={styles.subtitle}>{item?.subtitle || "Text subtitle"}</Text>
+        <Text style={styles.content}>{item?.content || "Text content"}</Text>
+      </Box>
+      <Box className="indicatorIntro">
+        <Text style={styles.row}>
+          <Text color={Colors.BLACK}>{current} </Text> {`/ ${length}`}
+        </Text>
+        <Box style={styles.row}>
+          <Image src={PrevBtn} />
+          <Image src={NextBtn} onClick={() => current + 1} />
+        </Box>
+      </Box>
     </Box>
   );
 };
@@ -16,24 +30,25 @@ const styles = {
     color: Colors.MAIN_BLUE,
     fontSize: 30,
     fontWeight: "bold",
-    margin: 10,
     fontFamily: "Rubik",
   },
   subtitle: {
     color: Colors.BLACK,
     fontSize: 18,
-    margin: 10,
     fontFamily: "Rubik",
   },
   content: {
     color: Colors.GREY,
     fontSize: 14,
-    margin: 10,
     fontFamily: "Rubik",
+    height: 100,
   },
-  body: {
-    padding: 10,
-    width: "30%",
-    minWidth: 350,
+
+  row: {
+    display: "flex",
+    flexDirection: "row",
+    fontSize: 22,
+    fontWeight: "bold",
+    color: Colors.GREY,
   },
 };
