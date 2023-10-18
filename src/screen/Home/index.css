@@ -1,0 +1,19 @@
+.main-banner{
+    background-color: #53A7E9;
+    justify-content: center;
+
+}
+.intro-container{
+    width: '100%';
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* overflow: scroll; */
+    scroll-behavior: auto;
+}
+.main{
+    width: 100%;
+}
+.nav{
+    padding: 8px;
+}
