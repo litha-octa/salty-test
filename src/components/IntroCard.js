@@ -34,5 +34,6 @@ const styles = {
   body: {
     padding: 10,
     width: "30%",
+    minWidth: 350,
   },
 };

@@ -3,7 +3,12 @@ import { Box, Image } from "@chakra-ui/react";
 import { Logo, MainBanner } from "../../assets/img";
 // import { HamburgerIcon } from "@chakra-ui/icons";
 import "./index.css";
-import { IntroCard, Footer, CoreValueContent } from "../../components";
+import {
+  IntroCard,
+  Footer,
+  CoreValueContent,
+  SpecialityContent,
+} from "../../components";
 import { Introductions } from "../../assets/constant/introductions";
 
 const Home = () => {
@@ -22,6 +27,7 @@ const Home = () => {
         })}
       </Box>
       <CoreValueContent />
+      <SpecialityContent />
       <Footer />
     </div>
   );

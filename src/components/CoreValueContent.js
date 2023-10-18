@@ -18,7 +18,7 @@ const CoreValueContent = () => {
       {CoreValue?.points?.map((item, index) => {
         return (
           <Box key={index} style={styles.list}>
-            <Text fontSize="2xl" style={styles.title_list}>
+            <Text fontSize="xl" style={styles.title_list}>
               -{item?.title}
             </Text>
             <Text style={styles.desc}>{item?.content}</Text>
