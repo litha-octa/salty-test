@@ -11,6 +11,33 @@
     /* display: none; */
     visibility: hidden;
 }
+.speciality_list{
+display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 16px;
+        padding-bottom: 16px;
+}
+.specialityListItem{
+    display: none;
+}
+.specialityBtnContainer{
+    display: none;
+}
+.loc_container{
+    background-color: white;
+            padding: 10px;
+            /* align-self: center; */
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+}
+
+
+
+
 @media screen and (
     max-width: 425px
 ){
@@ -25,6 +52,24 @@ width: 100%
     flex-direction: row;
     justify-content: space-between;
 }
-
-
+.speciality_list {
+    display: none;
+}
+.specialityBtnContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.specialityListItem {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+        padding-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.loc_container {
+    width: 100%;
+}
 }

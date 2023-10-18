@@ -10,8 +10,12 @@ import IconExhaust from "./exhaust.png";
 import MainBannerDesk from "./mainBannerDesk.png";
 import NextBtn from "./next.png";
 import PrevBtn from "./prev.png";
+import ArrowNext from "./arrNext.png";
+import ArrowPrev from "./arrPrev.png";
 
 export {
+  ArrowNext,
+  ArrowPrev,
   NextBtn,
   PrevBtn,
   IconBurger,

@@ -1,8 +1,16 @@
-import { Box, Text, Image } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Text, Image, Button } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
-import { IconAccesories, IconExhaust, IconSpeed } from "../assets/img";
-
+import {
+  IconAccesories,
+  IconExhaust,
+  IconSpeed,
+  ArrowNext,
+  ArrowPrev,
+} from "../assets/img";
+import "./index.css";
 const SpecialityContent = () => {
+  const [current, setCurrent] = useState(0);
   const data = {
     title: "OUR SPECIALITY",
     subtitle:
@@ -33,19 +41,41 @@ const SpecialityContent = () => {
         <Text fontSize="md" style={styles.subtitle}>
           {data?.subtitle}
         </Text>
-        <Box style={styles.list}>
+        <Box className="speciality_list">
           {data?.points?.map((item, index) => {
             return (
-              <Box styla={styles.item}>
+              <Box style={styles.item}>
                 <Image src={item?.icon} alt={`icon${index}`} />
-                <Text style={{ alignText: "center" }}>{item?.name}</Text>
+                <Text style={styles.itemName}>{item?.name}</Text>
               </Box>
             );
           })}
         </Box>
+        <Box className="specialityListItem">
+          <Box>
+            <Image src={data?.points[current]?.icon} alt={`icon${current}`} />
+            <Text style={styles.itemName}>{data?.points[current]?.name}</Text>
+          </Box>
+        </Box>
+
         <Text fontSize="md" style={styles.desc}>
           {data?.description}
         </Text>
+        <Box className="specialityBtnContainer">
+          <Button isDisabled={current === 0 ? true : false}>
+            <Image src={ArrowPrev} onClick={() => setCurrent(current - 1)} />
+          </Button>
+          <Button
+            isDisabled={current === data?.points?.length - 1 ? true : false}
+          >
+            <Image
+              src={ArrowNext}
+              onClick={() => {
+                setCurrent(current + 1);
+              }}
+            />
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
@@ -82,5 +112,11 @@ const styles = {
   },
   item: {
     marginHorizontal: 10,
+  },
+  itemName: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: Colors.BLACK,
+    marginTop: 10,
   },
 };
