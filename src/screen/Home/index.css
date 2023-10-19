@@ -1,25 +1,57 @@
-.main-banner{
-    /* background-color: #53A7E9; */
-    justify-content: center;
-    display: flex;
-
+@font-face {
+    font-family: 'rubik';
+    src: url('../../assets/font/Rubik-Regular.ttf') format('truetype');
 }
-.intro-container{
-    /* width: '100%'; */
-    display: flex;
-    flex-direction: row;
-    overflow: scroll;
-    scroll-behavior: auto;
+:root {
+    --white: #FFFFFF;
+    --MAIN_BLUE: #029FE4;
+    --BLUE_SPECIALITY: #509FDD;
+    --DARK_BLUE:#00537C;
+    --GREY:#777777;
+    --CORE_GREY:#F8F8F8;
+    --BLACK: black;
 }
-.main{
+* {
+    margin: 0;
+    padding :0;
+}
+.main {
     width: 100%;
 }
-.nav{
+.nav {
     padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.main-banner-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.main-banner{
+    justify-content: center;
+    display: flex;
+    width: 50%;
+    height: auto;
+}
+.company-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    padding: 16px;
+    background-color: var(--MAIN_BLUE);
+    color: var(--white);
+    font-family: 'rubik';
+}
+
+
+
 @media screen and (max-width:425px){
 
+    .company-info , .main-banner{
+    width: 100%
+    }
 }
