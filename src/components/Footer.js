@@ -1,13 +1,12 @@
 import { Box, Image, Select, Text } from "@chakra-ui/react";
 import { WhiteLogo, FooterBg } from "../assets/img";
-import { branch } from "../assets/constant/branch";
+import { branch } from "../assets/constant";
 import { Colors } from "../assets/constant/colors";
 import "./index.css";
 const Footer = () => {
   const list = ["Who We Are", "Our Values", "The Perks"];
   return (
     <Box backgroundImage={FooterBg} style={styles.body}>
-      {/* <Image src={FooterBg} fit={"cover"} style={styles.body} /> */}
       <Image src={WhiteLogo} style={styles.logo} />
       <Box className="loc_container">
         <Select placeholder={branch[0].name} style={styles.selector}>
@@ -49,6 +48,7 @@ const styles = {
     fontSize: 16,
   },
   address: {
+    width: "50%",
     color: Colors.MAIN_BLUE,
     fontSize: 16,
     marginTop: 20,

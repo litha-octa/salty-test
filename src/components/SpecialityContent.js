@@ -2,78 +2,84 @@ import React, { useState } from "react";
 import { Box, Text, Image, Button } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
 import {
-  IconAccesories,
-  IconExhaust,
-  IconSpeed,
-  ArrowNext,
-  ArrowPrev,
+  ArrowNextOn,
+  ArrowPrevOn,
+  ArrowNextOff,
+  ArrowPrevOff,
 } from "../assets/img";
 import "./index.css";
+import { speciality } from "../assets/constant";
 const SpecialityContent = () => {
   const [current, setCurrent] = useState(0);
-  const data = {
-    title: "OUR SPECIALITY",
-    subtitle:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod libero vel leo auctor, in venenatis nulla consequat. Sed commodo nunc sit amet congue aliquam.",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis euismod libero vel leo auctor, in venenatis nulla consequat. Sed commodo nunc sit amet congue aliquam.",
-    points: [
-      {
-        icon: IconAccesories,
-        name: "Accesories",
-      },
-      {
-        icon: IconSpeed,
-        name: "Speed Improvement",
-      },
-      {
-        icon: IconExhaust,
-        name: "Exhaust",
-      },
-    ],
-  };
+
   return (
     <Box style={styles.body}>
       <Box style={styles.main_container}>
         <Text style={styles.title} fontSize="2xl">
-          {data?.title}
+          {speciality?.title}
         </Text>
         <Text fontSize="md" style={styles.subtitle}>
-          {data?.subtitle}
+          {speciality?.subtitle}
         </Text>
         <Box className="speciality_list">
-          {data?.points?.map((item, index) => {
+          {speciality?.points?.map((item, index) => {
             return (
               <Box style={styles.item}>
-                <Image src={item?.icon} alt={`icon${index}`} />
+                <Image
+                  src={item?.icon}
+                  alt={`icon${index}`}
+                  className="speciality-icon"
+                />
                 <Text style={styles.itemName}>{item?.name}</Text>
+                <Text fontSize="md" style={styles.desc}>
+                  {item?.description}
+                </Text>
               </Box>
             );
           })}
         </Box>
         <Box className="specialityListItem">
           <Box>
-            <Image src={data?.points[current]?.icon} alt={`icon${current}`} />
-            <Text style={styles.itemName}>{data?.points[current]?.name}</Text>
+            <Image
+              src={speciality?.points[current]?.icon}
+              alt={`icon${current}`}
+              // className="speciality-icon"
+              style={styles.iconItem}
+            />
+            <Text style={styles.itemName}>
+              {speciality?.points[current]?.name}
+            </Text>
+            <Text style={styles.desc}>
+              {speciality?.points[current]?.description}
+            </Text>
           </Box>
         </Box>
-
-        <Text fontSize="md" style={styles.desc}>
-          {data?.description}
-        </Text>
         <Box className="specialityBtnContainer">
           <Button isDisabled={current === 0 ? true : false}>
-            <Image src={ArrowPrev} onClick={() => setCurrent(current - 1)} />
+            {current === 0 ? (
+              <Image src={ArrowPrevOff} />
+            ) : (
+              <Image
+                src={ArrowPrevOn}
+                onClick={() => setCurrent(current - 1)}
+              />
+            )}
           </Button>
           <Button
-            isDisabled={current === data?.points?.length - 1 ? true : false}
+            isDisabled={
+              current === speciality?.points?.length - 1 ? true : false
+            }
           >
-            <Image
-              src={ArrowNext}
-              onClick={() => {
-                setCurrent(current + 1);
-              }}
-            />
+            {current === speciality?.points?.length - 1 ? (
+              <Image src={ArrowNextOff} />
+            ) : (
+              <Image
+                src={ArrowNextOn}
+                onClick={() => {
+                  setCurrent(current + 1);
+                }}
+              />
+            )}
           </Button>
         </Box>
       </Box>
@@ -84,11 +90,14 @@ export default SpecialityContent;
 const styles = {
   body: {
     backgroundColor: Colors.BLUE_SPECIALITY,
-    padding: 14,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
   main_container: {
     backgroundColor: "white",
-    padding: 12,
+    padding: 20,
   },
   title: {
     color: Colors.MAIN_BLUE,
@@ -100,8 +109,9 @@ const styles = {
     fontFamily: "rubik",
   },
   desc: {
-    color: Colors.GREY,
+    // color: Colors.GREY,
     fontFamily: "rubik",
+    color: "#A7A7A7",
   },
   list: {
     display: "flex",
@@ -112,11 +122,23 @@ const styles = {
   },
   item: {
     marginHorizontal: 10,
+    padding: 10,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    textAlign: "center",
   },
   itemName: {
     fontSize: 16,
     fontWeight: "bold",
     color: Colors.BLACK,
     marginTop: 10,
+    marginBottom: 30,
+  },
+  iconItem: {
+    marginTop: 30,
+    width: "30%",
+    alignSelf: "center",
+    margin: "auto",
   },
 };

@@ -1,4 +1,4 @@
-import { CoreValue } from "../assets/constant/coreValue";
+import { CoreValue } from "../assets/constant";
 import { Box, Text, Image } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
 import { Illustration } from "../assets/img";
@@ -7,7 +7,7 @@ import "./index.css";
 const CoreValueContent = () => {
   return (
     <Box style={styles.body}>
-      <Text style={styles.title} fontSize="4xl">
+      <Text style={styles.title} fontSize="3xl">
         {CoreValue?.title}
       </Text>
       <Text style={styles.desc} fontSize="md">
@@ -26,12 +26,9 @@ const CoreValueContent = () => {
           </Box>
         );
       })}
-      <Image
-        src={Illustration}
-        alt="illustration"
-        className="illustration"
-        // style={styles.ilustration}
-      />
+      <Box style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Image src={Illustration} alt="illustration" className="illustration" />
+      </Box>
     </Box>
   );
 };
@@ -47,11 +44,9 @@ const styles = {
     textAlign: "center",
     color: Colors.MAIN_BLUE,
     fontWeight: "bold",
-    fontFamily: "rubik",
   },
   desc: {
     color: Colors.GREY,
-    fontFamily: "rubik",
     marginBottom: 16,
   },
   list: {
@@ -59,7 +54,6 @@ const styles = {
   },
   title_list: {
     color: Colors.BLACK,
-    fontFamily: "rubik",
     marginBottom: 10,
   },
   // ilustration: {

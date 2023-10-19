@@ -12,12 +12,16 @@ import NextBtn from "./next.png";
 import NextDisabled from "./nextNonactive.png";
 import PrevDisabled from "./prev.png";
 import PrevBtn from "./prev-active.png";
-import ArrowNext from "./arrNext.png";
-import ArrowPrev from "./arrPrev.png";
+import ArrowNextOn from "./arrNextOn.png";
+import ArrowPrevOn from "./arrPrevOn.png";
+import ArrowNextOff from "./arrNextOff.png";
+import ArrowPrevOff from "./arrPrevOff.png";
 
 export {
-  ArrowNext,
-  ArrowPrev,
+  ArrowNextOn,
+  ArrowPrevOn,
+  ArrowNextOff,
+  ArrowPrevOff,
   NextBtn,
   PrevBtn,
   IconBurger,
