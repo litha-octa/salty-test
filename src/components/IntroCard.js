@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Button } from "@chakra-ui/react";
 import { Colors } from "../assets/constant/colors";
-import { NextBtn, PrevBtn } from "../assets/img";
+import { NextBtn, PrevBtn, NextDisabled, PrevDisabled } from "../assets/img";
 import { Introductions } from "../assets/constant";
 import "./index.css";
 const IntroCard = () => {
@@ -33,11 +33,27 @@ const IntroCard = () => {
         </Text>
         <Box className="indicatorIntro">
           <Text style={styles.row}>
-            <Text color={Colors.BLACK}> </Text> {`/ length}`}
+            <Text color={Colors.BLACK}>{current + 1}</Text>{" "}
+            {` / ${Introductions?.length}`}
           </Text>
           <Box style={styles.row}>
-            <Image src={PrevBtn} />
-            <Image src={NextBtn} onClick={() => {}} />
+            <Button variant={"ghost"} isDisabled={current === 0 ? true : false}>
+              {current === 0 ? (
+                <Image src={PrevDisabled} />
+              ) : (
+                <Image src={PrevBtn} onClick={() => setCurrent(current - 1)} />
+              )}
+            </Button>
+            <Button
+              variant={"ghost"}
+              isDisabled={current === Introductions?.length - 1 ? true : false}
+            >
+              {current === Introductions?.length - 1 ? (
+                <Image src={NextDisabled} />
+              ) : (
+                <Image src={NextBtn} onClick={() => setCurrent(current + 1)} />
+              )}
+            </Button>
           </Box>
         </Box>
       </Box>
@@ -67,6 +83,8 @@ const styles = {
     flexDirection: "row",
     fontSize: 22,
     fontWeight: "bold",
-    color: Colors.GREY,
+  },
+  prevbtnActive: {
+    transform: [{ rotate: "90deg" }],
   },
 };

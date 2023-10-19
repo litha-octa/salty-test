@@ -9,7 +9,9 @@ import IconSpeed from "./speed.png";
 import IconExhaust from "./exhaust.png";
 import MainBanner from "./BannerDesk.png";
 import NextBtn from "./next.png";
-import PrevBtn from "./prev.png";
+import NextDisabled from "./nextNonactive.png";
+import PrevDisabled from "./prev.png";
+import PrevBtn from "./prev-active.png";
 import ArrowNext from "./arrNext.png";
 import ArrowPrev from "./arrPrev.png";
 
@@ -28,4 +30,6 @@ export {
   IconExhaust,
   IconSpeed,
   MainBanner2,
+  NextDisabled,
+  PrevDisabled,
 };

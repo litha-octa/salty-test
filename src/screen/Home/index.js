@@ -15,7 +15,11 @@ const Home = () => {
     <div className="main">
       <Box className="nav">
         <Image src={Logo} />
-        <Image src={IconBurger} boxSize={"30px"} />
+        <Image
+          src={IconBurger}
+          boxSize={"15px"}
+          style={{ alignSelf: "center" }}
+        />
       </Box>
       <Box className="main-banner-container">
         <Image src={MainBanner} className="main-banner" />
