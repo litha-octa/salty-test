@@ -12,6 +12,9 @@
     font-family: 'rubik';
 
 }
+.list-card{
+    display: none;
+}
 .illustration{
     width:25%;
     display: flex;
@@ -60,6 +63,11 @@ display: flex;
 ){
     .list-model{
         display: none;
+    }
+    .list-card{
+        display: flex;  
+        flex-direction: column;
+        padding: 22px;
     }
 .illustration{
 width: 100%
