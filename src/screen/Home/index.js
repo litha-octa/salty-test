@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="main">
       <Box className="nav">
-        <Image src={Logo} />
+        <Image src={Logo} className="main-logo" />
         <Image
           src={IconBurger}
           boxSize={"15px"}
